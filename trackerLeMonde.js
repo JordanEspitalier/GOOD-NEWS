@@ -23,7 +23,6 @@ const getArticlesLinkFromPage = async (url)=>{
             
             go = false
         }
-
     
     } while (go);
     
@@ -53,7 +52,6 @@ const getArticlesLinkFromPage = async (url)=>{
         console.log(error)
     }
     
-    
 }
 
 
@@ -62,25 +60,31 @@ const getArticlesLinkFromPage = async (url)=>{
 
 const getAllLinksFromLeMonde = async ()=>{
 
-    const leMondeInternational = await getArticlesLinkFromPage('https://www.lemonde.fr/international/')
-    const leMondePolitique = await getArticlesLinkFromPage('https://www.lemonde.fr/politique/')
-    const leMondeSociete = await getArticlesLinkFromPage('https://www.lemonde.fr/societe/')
-    const leMondeLesDecodeurs = await getArticlesLinkFromPage('https://www.lemonde.fr/les-decodeurs/')
-    const leMondeSport = await getArticlesLinkFromPage('https://www.lemonde.fr/sport/')
-    const leMondePlanette = await getArticlesLinkFromPage('https://www.lemonde.fr/planete/')
-    const leMondeSciences = await getArticlesLinkFromPage('https://www.lemonde.fr/sciences/')
-    const leMondeCampus = await getArticlesLinkFromPage('https://www.lemonde.fr/campus/')
-    const leMondeAfrique = await getArticlesLinkFromPage('https://www.lemonde.fr/afrique/')
-    const leMondePixel = await getArticlesLinkFromPage('https://www.lemonde.fr/pixels/')
-    const leMondeSante = await getArticlesLinkFromPage('https://www.lemonde.fr/sante/')
-    const leMondeBigBrowser = await getArticlesLinkFromPage('https://www.lemonde.fr/big-browser/')
+    try {
+        const leMondeInternational = await getArticlesLinkFromPage('https://www.lemonde.fr/international/')
+        const leMondePolitique = await getArticlesLinkFromPage('https://www.lemonde.fr/politique/')
+        const leMondeSociete = await getArticlesLinkFromPage('https://www.lemonde.fr/societe/')
+        const leMondeLesDecodeurs = await getArticlesLinkFromPage('https://www.lemonde.fr/les-decodeurs/')
+        const leMondeSport = await getArticlesLinkFromPage('https://www.lemonde.fr/sport/')
+        const leMondePlanette = await getArticlesLinkFromPage('https://www.lemonde.fr/planete/')
+        const leMondeSciences = await getArticlesLinkFromPage('https://www.lemonde.fr/sciences/')
+        const leMondeCampus = await getArticlesLinkFromPage('https://www.lemonde.fr/campus/')
+        const leMondeAfrique = await getArticlesLinkFromPage('https://www.lemonde.fr/afrique/')
+        const leMondePixel = await getArticlesLinkFromPage('https://www.lemonde.fr/pixels/')
+        const leMondeSante = await getArticlesLinkFromPage('https://www.lemonde.fr/sante/')
+        const leMondeBigBrowser = await getArticlesLinkFromPage('https://www.lemonde.fr/big-browser/')
+    
+    
+        const leMonde = leMondeInternational.concat(leMondePolitique, leMondeSociete, leMondeLesDecodeurs, leMondeSport, leMondePlanette, leMondeSciences, leMondeCampus, leMondeAfrique, leMondePixel, leMondeSante, leMondeBigBrowser)
+    
+    
+    
+        return leMonde
+    } catch (error) {
+        console.log(error)
+    }
 
 
-    const leMonde = leMondeInternational.concat(leMondePolitique, leMondeSociete, leMondeLesDecodeurs, leMondeSport, leMondePlanette, leMondeSciences, leMondeCampus, leMondeAfrique, leMondePixel, leMondeSante, leMondeBigBrowser)
-
-
-
-    return leMonde
 }
 
 const sortByCategory = async ()=>{
