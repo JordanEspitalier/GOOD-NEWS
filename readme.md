@@ -9,11 +9,12 @@ Je prévois aussi de faire interragir les utilisateurs de la plateforme qui pour
 ## PREREQUIS
 
     - NODEJS
+    - NPM
 
 ## INSCRUCTIONS POUR LANCER LE BOT
 
     - CLONER LE REPOS
     - npm i
-    - node tracker.js
+    - node trackerLeMonde.js
 
 ⚠️ Le bot fetch plus de 700 urls, le traitement peut donc prendre quelques minutes ⚠️

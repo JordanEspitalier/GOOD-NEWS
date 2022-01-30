@@ -174,10 +174,21 @@ const sortByCategory = async ()=>{
 
 const getArticleContent = async()=>{
 
-    const leMonde = await sortByCategory()
+    console.log('START Le Monde Tracking')
 
+
+    const leMonde = await sortByCategory()
+    console.time('IN')
+    let nbArticlesTracked = 0
+    const getLog = [51, 101, 151, 201, 251, 301, 351, 401, 451, 501, 551, 601, 651, 701, 751, 801, 851, 901]
     for(let category in leMonde){
         for(let i = 0; i<leMonde[category].length; i++){
+
+
+            if(getLog.includes(nbArticlesTracked)){
+                console.log(`${nbArticlesTracked - 1} ARTICLES TRACKED`)
+                console.timeLog('IN')
+            }
 
             // GET TITLE OF THE ARTICLE
 
@@ -202,10 +213,13 @@ const getArticleContent = async()=>{
 
             // GET IMG LINK OF THE ARTICLE
 
-
+            nbArticlesTracked++
         }
     }
-
+    console.log(leMonde)
+    console.log(`${nbArticlesTracked} ARTICLES TRACKED`)
+    console.timeEnd('IN')
+    console.log('END Le Monde Tracking')
     return leMonde;
 
 
