@@ -15,6 +15,6 @@ Je prévois aussi de faire interragir les utilisateurs de la plateforme qui pour
 
     - CLONER LE REPOS
     - npm i
-    - node trackerLeMonde.js
+    - node tracker.js
 
 ⚠️ Le bot fetch plus de 700 urls, le traitement peut donc prendre quelques minutes ⚠️
