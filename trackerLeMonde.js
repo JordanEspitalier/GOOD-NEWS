@@ -200,14 +200,29 @@ const getArticleContent = async()=>{
             if(indexStart == -1){
 
                 indexStart = str.indexOf('<h1 class="article__title article__title--opinion">');
+                if(indexStart == -1){
+                    indexStart = str.indexOf('<h1 class="article__title article__title--campaign">');
+                    const indexEnd = str.indexOf('</h1>')
+                    let title = str.slice(indexStart + 52, indexEnd)
+                    // console.log(title)
+                    // console.log(leMonde[category][i].articleLink)
+                    leMonde[category][i].title = title
+                    continue;
+                }
                 const indexEnd = str.indexOf('</h1>')
                 let title = str.slice(indexStart + 51, indexEnd)
+                // console.log(title)
+                // console.log(leMonde[category][i].articleLink)
                 leMonde[category][i].title = title
 
-            }else{
+            }
+            else{
 
                 const indexEnd = str.indexOf('</h1>')
                 let title = str.slice(indexStart + 27, indexEnd)
+                console.log(leMonde[category][i].articleLink)
+                console.log(title)
+                console.log(leMonde[category][i].articleLink)
                 leMonde[category][i].title = title
             }
 
